@@ -1,0 +1,26 @@
+# ──────────────────────────────────────────────────
+# Link        https://www.hackerrank.com/challenges/find-second-maximum-number-in-a-list/problem?isFullScreen=true
+# Problem     Find the Runner-Up Score!  
+# Difficulty  Easy
+# Subdomain   Basic Data Types
+# Platform    HackerRank
+# Language    pypy3
+# Status      Accepted
+# Submitted   2026-08-12, 04:08 p.m.
+# ──────────────────────────────────────────────────
+
+if __name__ == '__main__':
+    n = int(input())
+    arr = [int(i) for i in input().split()]
+    
+    mx = arr[0]
+    for score in arr:
+        if score > mx:
+            mx = score
+        
+    sm = -101
+    for score in arr:
+        if score > sm and score < mx:
+            sm = score
+            
+    print(sm)
